@@ -1,9 +1,19 @@
 
 J
 src/components/Headline.js,5/7/575f7e567010ab82715b6081712ac80faf4fa0cb
-;
-src/main.js,4/1/41d348bfb8135a570c1d2675c884f60724201c5c
 K
 src/components/MovieList.js,d/d/ddf77b430c90bfbb2aa6cb49bf68fab160e482d8
 F
 src/routes/NotFound.js,a/c/ac19745a42f7ac0a3e530c43b4444342de63da2b
+K
+src/components/MovieItem.js,2/1/21704a19e095cdc28429ed2b7372dac8dd882812
+w
+G.idea/sonarlint/issuestore/a/c/ac19745a42f7ac0a3e530c43b4444342de63da2b,9/2/9238bbcce6c98794459aa9f148c2b29b97516a4e
+w
+G.idea/sonarlint/issuestore/d/d/ddf77b430c90bfbb2aa6cb49bf68fab160e482d8,8/3/830378249bec1883b086095a6bc3a42b3222e493
+S
+#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
+R
+".parcel-cache/40ddeda4a7a72709.txt,c/1/c1064863e07e0efaf155c3010f8b4101074d558e
+?
+dist/index.html,8/3/83c3885e754cb61b14e68e2ab17c1c37c43a2f3f

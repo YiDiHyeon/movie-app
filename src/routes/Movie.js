@@ -1,6 +1,7 @@
 import { Component } from "../core/heropy";
 import movieStore, { getMovieDetails } from "../store/movie";
 
+
 export default class Movie extends Component {
     async render() {
         this.el.classList.add('container', 'the-movie')

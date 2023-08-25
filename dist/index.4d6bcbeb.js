@@ -982,7 +982,13 @@ const searchMovies = async (page)=>{
         store.state.message = "";
     }
     try {
-        const res = await fetch(`https://omdbapi.com?apikey=d0b745a1&s=${store.state.searchText}&page=${page}`);
+        const res = await fetch("/api/movie", {
+            method: "POST",
+            body: JSON.stringify({
+                title: store.state.searchText,
+                page: page
+            })
+        });
         const { Search, totalResults, Response, Error } = await res.json();
         if (Response === "True") {
             store.state.movies = [
@@ -999,7 +1005,12 @@ const searchMovies = async (page)=>{
 };
 const getMovieDetails = async (id)=>{
     try {
-        const res = await fetch(`https://omdbapi.com?apikey=d0b745a1&i=${id}&plot=full`);
+        const res = await fetch("/api/movie", {
+            method: "POST",
+            body: JSON.stringify({
+                id: id
+            })
+        });
         store.state.movie = await res.json();
     } catch (error) {
         console.log(error);
