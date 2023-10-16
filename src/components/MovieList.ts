@@ -22,6 +22,7 @@ export default class MovieList extends Component {
             ${movieStore.state.message
             ? `<div class="message">${movieStore.state.message}</div>         ` 
             : `<div class="movies"></div>`}
+            
             <div class="the-loader hide"></div>
         `
         const moviesEl = this.el.querySelector('.movies')
