@@ -313,6 +313,13 @@ header .user img {
     text-align: center;
 }
 
+.movie-recent-search {
+    padding:20px;
+    border-radius: 4px;
+    background-color: var(--color-area);
+    margin-bottom: 30px;
+}
+
 .the-movie {
     color:var(--color-white-50);
     display: flex;
@@ -387,22 +394,12 @@ header .user img {
     }
 }
 
-
 footer {
     padding: 40px 40px 60px;text-align: center;
 }
 
-footer a {
+footer  {
     color:var(--color-white-20);
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-.about {
-
 }
 
 .about .photo {
@@ -418,6 +415,10 @@ footer a:hover {
     font-size: 40px;
     font-family: 'Oswald', sans-serif;
     margin-bottom: 20px;
+}
+
+.about .phone {
+    color:var(--color-primary);
 }
 
 .about p {

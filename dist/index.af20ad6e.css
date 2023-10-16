@@ -318,6 +318,13 @@ header .user img {
   font-size: 20px;
 }
 
+.movie-recent-search {
+  background-color: var(--color-area);
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
 .the-movie {
   color: var(--color-white-50);
   gap: 70px;
@@ -394,16 +401,8 @@ header .user img {
 
 footer {
   text-align: center;
-  padding: 40px 40px 60px;
-}
-
-footer a {
   color: var(--color-white-20);
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
+  padding: 40px 40px 60px;
 }
 
 .about .photo {
@@ -419,6 +418,10 @@ footer a:hover {
   margin-bottom: 20px;
   font-family: Oswald, sans-serif;
   font-size: 40px;
+}
+
+.about .phone {
+  color: var(--color-primary);
 }
 
 .about p {
