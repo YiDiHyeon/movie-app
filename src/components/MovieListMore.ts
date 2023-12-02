@@ -18,7 +18,7 @@ export default class MovieListMore extends Component {
         this.el.textContent = 'View More'
         this.el.addEventListener('click', async ()=> {
             this.el.classList.add('hide')
-            await searchMovies(movieStore.state.page + 1)
+            await searchMovies(movieStore.state.page + 1, movieStore.state.year)
         })
     }
 }

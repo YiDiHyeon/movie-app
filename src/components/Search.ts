@@ -2,6 +2,7 @@ import {  Component } from "../core/heropy";
 import movieStore, { searchMovies } from '../store/movie'
 import store from "../store/movie";
 export default class Search extends Component {
+
     render() {
         this.el.classList.add('search-container')
         this.el.innerHTML = `
@@ -24,7 +25,8 @@ export default class Search extends Component {
         const inputEl = this.el.querySelector('input')
         const btnEl = this.el.querySelector('button')
 
-        movieStore.state.year = ''
+        // movieStore.state.year = ''
+
         selectEl?.addEventListener('change',()=>{
             movieStore.state.year = selectEl.value
         })
@@ -109,14 +111,18 @@ export default class Search extends Component {
 
             const existingSearches = getCookie('searches') ? JSON.parse(getCookie('searches')) : [];
 
+            console.log('existingSearches', existingSearches)
+            console.log('store.state.recentSearch', store.state.recentSearch)
+
             if(existingSearches.length === 0) {
                 recentSearchList.innerHTML = "There are no recent searches.";
             } else  {
                 recentSearchList.innerHTML = "";
             }
 
+            store.state.recentSearch = existingSearches
 
-            for (const search of existingSearches) {
+            for (const search of  store.state.recentSearch) {
                 const listEl = document.createElement('li');
                 const spanEl = document.createElement('span')
                 spanEl.textContent = search
@@ -147,6 +153,8 @@ export default class Search extends Component {
             setCookie('searches', JSON.stringify(updatedSearches), 7);
             RecentSearchesView();
         }
+
+
 
         window.onload = function () {
             RecentSearchesView();
