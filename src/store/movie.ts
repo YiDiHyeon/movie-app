@@ -49,6 +49,7 @@ interface State {
     loading:boolean
     message : string
     year : string,
+    recentSearch : []
 }
 
 
@@ -62,6 +63,7 @@ const store = new Store<State>({
     movie:{} as DetailedMovie,
     loading:false,
     message: 'Search for the movie title!',
+    recentSearch: [],
 })
 
 export default store
