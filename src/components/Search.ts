@@ -109,6 +109,13 @@ export default class Search extends Component {
 
             const existingSearches = getCookie('searches') ? JSON.parse(getCookie('searches')) : [];
 
+            if(existingSearches.length === 0) {
+                recentSearchList.innerHTML = "There are no recent searches.";
+            } else  {
+                recentSearchList.innerHTML = "";
+            }
+
+
             for (const search of existingSearches) {
                 const listEl = document.createElement('li');
                 const spanEl = document.createElement('span')
