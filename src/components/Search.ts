@@ -25,8 +25,6 @@ export default class Search extends Component {
         const inputEl = this.el.querySelector('input')
         const btnEl = this.el.querySelector('button')
 
-        // movieStore.state.year = ''
-
         selectEl?.addEventListener('change',()=>{
             movieStore.state.year = selectEl.value
         })
@@ -96,10 +94,10 @@ export default class Search extends Component {
             const searchText = movieStore.state.searchText
             if (searchText !== "") {
                 let existingSearches = getCookie('searches') ? JSON.parse(getCookie('searches')) : [];
-
+                store.state.recentSearch = existingSearches
                 if (!existingSearches.includes(searchText)) {
                     existingSearches = [searchText, ...existingSearches.slice(0, 9)];
-                    setCookie('searches', JSON.stringify(existingSearches), 7);
+                    setCookie('searches', JSON.stringify(existingSearches), 1);
                 }
                 RecentSearchesView();
             }
@@ -110,9 +108,6 @@ export default class Search extends Component {
             recentSearchList.innerHTML = "";
 
             const existingSearches = getCookie('searches') ? JSON.parse(getCookie('searches')) : [];
-
-            console.log('existingSearches', existingSearches)
-            console.log('store.state.recentSearch', store.state.recentSearch)
 
             if(existingSearches.length === 0) {
                 recentSearchList.innerHTML = "There are no recent searches.";
@@ -150,11 +145,9 @@ export default class Search extends Component {
         function deleteSearch(search: string) {
             const existingSearches = getCookie('searches') ? JSON.parse(getCookie('searches')) : [];
             const updatedSearches = existingSearches.filter((s: string) => s !== search);
-            setCookie('searches', JSON.stringify(updatedSearches), 7);
+            setCookie('searches', JSON.stringify(updatedSearches), 1);
             RecentSearchesView();
         }
-
-
 
         window.onload = function () {
             RecentSearchesView();
