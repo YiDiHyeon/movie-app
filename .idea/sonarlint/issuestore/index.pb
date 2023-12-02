@@ -3,11 +3,6 @@
 dist/index.html,8/3/83c3885e754cb61b14e68e2ab17c1c37c43a2f3f
 F
 dist/index.4d6bcbeb.js,c/a/cad9adc170b0fe2dc9c242d11b54b6c5e514d971
-:
-
-index.html,f/6/f6013a00b362253c64368d6eebc50ea2131754e2
-C
-src/routes/Movie.ts,8/6/8613cb356d1fcfc68f959045e98fa9bee6a39a3f
 K
 src/components/MovieItem.ts,7/c/7c298f361de9ef99b4600b6208660a9defb52920
 ?
