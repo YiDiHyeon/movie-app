@@ -48,27 +48,23 @@ interface State {
     movie: DetailedMovie
     loading:boolean
     message : string
-    year : string,
 }
-
 
 
 const store = new Store<State>({
     searchText:'',
     page:1,
     pageMax:1,
-    year:'',
     movies:[],
     movie:{} as DetailedMovie,
     loading:false,
-    message: 'Search for the movie title!',
+    message: 'Search for the movie title!'
 })
 
 export default store
-export const searchMovies = async (page : number, year:string) => {
+export const searchMovies =async (page : number) => {
     store.state.loading = true
     store.state.page = page
-    store.state.year = year
     if(page === 1){
         store.state.movies = []
         store.state.message = ''
@@ -79,21 +75,17 @@ export const searchMovies = async (page : number, year:string) => {
             body: JSON.stringify({
                 title:store.state.searchText,
                 page: page,
-                year: year,
             })
         })
-        const { Search, totalResults, Response, Error } = await res.json()
-
+        const { Search, totalResults, Response, Error }  = await res.json()
         if(Response === 'True'){
             store.state.movies = [
                 ...store.state.movies,
                 ...Search
             ]
             store.state.pageMax = Math.ceil(Number(totalResults) / 10)
-
         } else {
             store.state.message = Error
-            store.state.pageMax = 1
         }
     } catch (error){
         console.log('searchMovies error :' , error)
