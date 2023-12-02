@@ -3,7 +3,6 @@ import Headline from "../components/Headline";
 import Search from "../components/Search";
 import MovieList from "../components/MovieList";
 import MovieListMore from "../components/MovieListMore";
-import MovieRecentSearches from "../components/MovieRecentSearches";
 
 export default class Home extends Component {
     render() {
